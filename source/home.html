@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<html>
-
 <head>
     <!-- Router -->
     <script src="source/assets/scripts/Router.js" type="module"></script>
+
+    <!-- Main Stylesheet & Scripts -->
+    <link rel="stylesheet" href="assets/main.css" />
+    <script src="assets/scripts/main.js" type="module"></script>
+
 </head>
 
 <header>
@@ -30,7 +33,7 @@
 
 
     <!--Calendar-->
-    <section id="calenderID" class="calendar">
+    <section id="calendarID" class="calendar shown">
         <h2>Calendar</h2>
         <div class=calendar-nav>
             <a href="#monthID">Month</a>
@@ -60,7 +63,7 @@
     </section>
 
     <!--Grocery-list-->
-    <section id="grocery-listID" class="grocery-list">
+    <section id="grocery-listID" class="grocery-list shown">
         <h2>Grocery List</h2>
         <ul>
             <input type="checkbox" checked>
@@ -118,16 +121,15 @@
                 <li><a href="step3">3</a></li>
                 <li><a href="step4">4</a></li>
             </ul>
-            <button id="cooking-modeID"> Cook</button>
+            <button><a href = "cookingmode.html"> Cook </a></button>
         </div>
 
     </section>
-
     <!--Cooking Mode-->
-    <section id="cooking-modeID" class="cooking-mode">
+    <!-- <section id="cooking-modeID" class="cooking-mode shown">
         <h2>Cooking Mode</h2>
-        <!--Cooking Steps-->
-        <div class="cooking-steps">
+        <--Cooking Steps-->
+        <!-- <div class="cooking-steps">
             <p>Steps</p>
             <ul>
                 <li><a href="step1">1</a></li>
@@ -135,17 +137,17 @@
                 <li><a href="step3">3</a></li>
                 <li><a href="step4">4</a></li>
             </ul>
-        </div>
+        </div> -->
 
         <!--Cooking Timer-->
-        <div class="cooking-timer">
+        <!-- <div class="cooking-timer">
             <p>Timer</p>
             <button type="button">Start</button>
         </div>
-    </section>
+    </section> -->
 
     <!--Profile Page-->
-    <section id="profile-pageID" class="profile-page">
+    <section id="profile-pageID" class="profile-page shown">
         <h2>User Profile</h2>
 
         <!--Profile Page Navbar-->
@@ -169,7 +171,7 @@
     </section>
 
     <!--Favorites-->
-    <section class="favorites">
+    <section class="favorites shown">
         <h2>Favorites</h2>
         <p>Content...</p>
         <div class="favorite-recipe-cards-wrapper">
@@ -179,10 +181,11 @@
     </section>
 
     <!--Add-Recipes-->
-    <section class="add-recipe">
+    <section class="add-recipe shown">
         <h2>Add Recipe</h2>
         <div class="add-recipe-navbar">
-            <a href="#add-recipe-summaryID">Summary</a>
+            <!-- li><a onclick="navTo('homeID')" href="javascript:void(0)">home</a></li> -->
+            <a onclick= href="#add-recipe-summaryID">Summary</a>
             <a href="#add-recipe-ingredientsID">Ingredients</a>
             <a href="#add-recipe-directionID">Directions</a>
         </div>
@@ -231,9 +234,9 @@
             <h2>Collapsed Sidepanel</h2>
             <p>Content...</p>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="">Favorite Recipes</a>
-            <a href="profile-page-reviewsID">Previously Cooked</a>
-            <a href="add-recipe-summaryID">Add a Recipe</a>
+            <a onclick="navTo('favorites')" href="javascript:void(0)">Favorite Recipes</a>
+            <a onclick="navTo('profile-page-reviewsID')" href="javascript:void(0)">Previously Cooked</a>
+            <a a onclick="navTo('add-recipe-summaryID')" href="javascript:void(0)">Add a Recipe</a>
             <a href="#">Write a Review</a>
         </div>
 
@@ -251,16 +254,22 @@
     <footer>
         <h2>Footer</h2>
         <ul>
-            <li><a href="#homeID">home</a></li>
-            <li><a href="#calendarID">calendar</a></li>
-            <li><a href="#grocery-listID">list</a></li>
-            <li><a href="#profile-pageID">profile</a></li>
+            <li><a onclick="navTo('homeID')" href="javascript:void(0)">home</a></li>
+            <li><a onclick="navTo('calendarID')" href="javascript:void(0)">calendar</a></li>
+            <li><a onclick="navTo('grocery-listID')" href="javascript:void(0)">list</a></li>
+            <li><a onclick="navTo('profile-pageID')" href="javascript:void(0)">profile</a></li>
         </ul>
     </footer>
 
 </body>
 
 <script>
+    function navTo(str) {
+        if (document.getElementById(str).classList.contains('shown'))
+            document.getElementById(str).classList.remove('shown');
+        else
+            document.getElementById(str).classList.add('shown');
+    }
     function openNav() {
         document.getElementById("sidepanelID").style.width = "250px";
     }

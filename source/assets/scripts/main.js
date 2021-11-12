@@ -1,16 +1,5 @@
 import { Router } from './Router.js';
 
-const recipes = [
-    'https://introweb.tech/assets/json/ghostCookies.json',
-    'https://introweb.tech/assets/json/birthdayCake.json',
-    'https://introweb.tech/assets/json/chocolateChip.json',
-    'https://introweb.tech/assets/json/stuffing.json',
-    'https://introweb.tech/assets/json/turkey.json',
-    'https://introweb.tech/assets/json/pumpkinPie.json'
-  ];
-
-const recipeData = {}
-
 const router = new Router(function () {
     document.getElementsByClassName('calendar').classList.add('shown');
     document.getElementsByClassName('calendar').classList.remove('shown');
@@ -36,7 +25,6 @@ const router = new Router(function () {
 
 window.addEventListener('DOMContentLoaded', init);
 
-
 async function init() {
     initializeServiceWorker();
   
@@ -46,15 +34,42 @@ async function init() {
       console.log(`Error fetching recipes: ${err}`);
       return;
     }
+
 }
 
-/*
-function bindRecipeCard(recipeCard, pageName) {
-  recipeCard.addEventListener('click', e => {
+async function fetchRecipes() {
+  return new Promise((resolve, reject) => {
+    recipes.forEach(recipe => {
+      fetch(recipe)
+        .then(response => response.json())
+        .then(data => {
+          // This grabs the page name from the URL in the array above
+          data['page-name'] = recipe.split('/').pop().split('.')[0];
+          recipeData[recipe] = data;
+          if (Object.keys(recipeData).length == recipes.length) {
+            resolve();
+          }
+        })
+        .catch(err => {
+          console.log(`Error loading the ${recipe} recipe`);
+          reject(err);
+        });
+    });
+  });
+}
+
+//cook button
+//function bindCookButton(){
+//  const button = document.querySelector('.button--wrapper > button');
+//}
+
+//navigate to next page
+function bindLink(link, pageName) {
+  link.addEventListener('click', e => {
     if (e.path[0].nodeName == 'A') return;
     router.navigate(pageName);
   });
-*/
+}
 
 function bindPopstate() {
   window.addEventListener('popstate', function(event){
@@ -65,3 +80,5 @@ function bindPopstate() {
       router.navigate('home',true);
     }
   });
+
+}
