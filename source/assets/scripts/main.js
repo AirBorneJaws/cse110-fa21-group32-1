@@ -47,3 +47,21 @@ async function init() {
       return;
     }
 }
+
+/*
+function bindRecipeCard(recipeCard, pageName) {
+  recipeCard.addEventListener('click', e => {
+    if (e.path[0].nodeName == 'A') return;
+    router.navigate(pageName);
+  });
+*/
+
+function bindPopstate() {
+  window.addEventListener('popstate', function(event){
+    if(event.state){
+      router.navigate(event.state.page,true);
+    }
+    else{
+      router.navigate('home',true);
+    }
+  });
