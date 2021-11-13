@@ -1,27 +1,34 @@
 import { Router } from './Router.js';
 
-const router = new Router(function () {
-    document.getElementsByClassName('calendar').classList.add('shown');
-    document.getElementsByClassName('calendar').classList.remove('shown');
 
-    document.getElementsByClassName('grocery-list').classList.add('shown');
-    document.getElementsByClassName('grocery-list').classList.remove('shown');
+// const router = new Router(function () {
+//     document.getElementsByClassName('calendar').classList.add('shown');
+//     document.getElementsByClassName('calendar').classList.remove('shown');
 
-    document.getElementsByClassName('recipe').classList.add('shown');
-    document.getElementsByClassName('recipe').classList.remove('shown');
+//     document.getElementsByClassName('grocery-list').classList.add('shown');
+//     document.getElementsByClassName('grocery-list').classList.remove('shown');
 
-    document.getElementsByClassName('cooking-mode').classList.add('shown');
-    document.getElementsByClassName('cooking-mode').classList.remove('shown');
+//     document.getElementsByClassName('recipe').classList.add('shown');
+//     document.getElementsByClassName('recipe').classList.remove('shown');
 
-    document.getElementsByClassName('profile-page').classList.add('shown');
-    document.getElementsByClassName('profile-page').classList.remove('shown');
+//     document.getElementsByClassName('cooking-mode').classList.add('shown');
+//     document.getElementsByClassName('cooking-mode').classList.remove('shown');
 
-    document.getElementsByClassName('favorites').classList.add('shown');
-    document.getElementsByClassName('favorites').classList.remove('shown');
+//     document.getElementsByClassName('profile-page').classList.add('shown');
+//     document.getElementsByClassName('profile-page').classList.remove('shown');
 
-    document.getElementsByClassName('add-recipe').classList.add('shown');
-    document.getElementsByClassName('add-recipe').classList.remove('shown');
-});
+//     document.getElementsByClassName('favorites').classList.add('shown');
+//     document.getElementsByClassName('favorites').classList.remove('shown');
+
+//     document.getElementsByClassName('add-recipe').classList.add('shown');
+//     document.getElementsByClassName('add-recipe').classList.remove('shown');
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const homePage = document.querySelector
+})
+
+const 
 
 window.addEventListener('DOMContentLoaded', init);
 
