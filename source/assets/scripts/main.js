@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   //Footer
   const homePage = document.querySelector("#homeID");
-  const calenderPage = document.querySelector("#calendarID");
+  const calendarPage = document.querySelector("#calendarID");
   const groceryPage = document.querySelector("#grocery-listID");
   const profilePage = document.querySelector("#profile-pageID");
 
@@ -32,12 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const userViewed = document.querySelector("#profile-page-reviewsID");
   const userRecipe = document.querySelector("#profile-page-recipeID");
 
+  //Calendar Nav bar
+  const monthPage = document.querySelector("#monthID");
+  const weekPage = document.querySelector("#weekID");
+  const dayPage = document.querySelector("#dayID")
+
     //Search Bar
     document.querySelector("#search-bar").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.remove('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -51,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         homePage.classList.remove('hidden');
         searchPage.classList.add('hidden');
-        calenderPage.classList.add('hidden');
+        calendarPage.classList.add('hidden');
         groceryPage.classList.add('hidden');
         recipePage.classList.add('hidden');
         cookingPage.classList.add('hidden');
@@ -60,12 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
         addRecipePage.classList.add('hidden');
     });
 
-    //Calender
-    document.querySelector("#LinkToCalender").addEventListener("click", e => {
+    //calendar
+    document.querySelector("#LinkToCalendar").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.remove('hidden');
+      calendarPage.classList.remove('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -74,12 +79,67 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //Calendar Month View
+    document.querySelector("#LinkToMonth").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calendarPage.classList.remove('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      monthPage.classList.remove('hidden');
+      weekPage.classList.add('hidden');
+      dayPage.classList.add('hidden');
+    });
+
+    //Calendar Week View
+    document.querySelector("#LinkToWeek").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calendarPage.classList.remove('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      monthPage.classList.add('hidden');
+      weekPage.classList.remove('hidden');
+      dayPage.classList.add('hidden');
+    });
+
+    //Calendar Day View
+    document.querySelector("#LinkToDay").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calendarPage.classList.remove('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      monthPage.classList.add('hidden');
+      weekPage.classList.add('hidden');
+      dayPage.classList.remove('hidden');
+    });
+  
+
     //Grocery list
     document.querySelector("#LinkToList").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.remove('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -93,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -110,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -127,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -144,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -158,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -175,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.remove('hidden');
       cookingPage.classList.add('hidden');
@@ -193,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.remove('hidden');
       cookingPage.classList.add('hidden');
@@ -211,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.remove('hidden');
       cookingPage.classList.add('hidden');
@@ -229,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.remove('hidden');
       cookingPage.classList.add('hidden');
@@ -247,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.remove('hidden');
@@ -261,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -279,7 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -297,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');
@@ -315,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.add('hidden');
-      calenderPage.classList.add('hidden');
+      calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
       recipePage.classList.add('hidden');
       cookingPage.classList.add('hidden');

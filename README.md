@@ -31,5 +31,4 @@ Our app can be found here: [https://cse110-fa21-group32.github.io/cse110-fa21-gr
 
 ## Work On
 - saving the history, going back and forth
-- adding to the url
-- calander navigation bar
+- updating the url when traveling through the pages
