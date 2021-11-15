@@ -1,48 +1,185 @@
-import { Router } from './Router.js';
-
-
-// const router = new Router(function () {
-//     document.getElementsByClassName('calendar').classList.add('shown');
-//     document.getElementsByClassName('calendar').classList.remove('shown');
-
-//     document.getElementsByClassName('grocery-list').classList.add('shown');
-//     document.getElementsByClassName('grocery-list').classList.remove('shown');
-
-//     document.getElementsByClassName('recipe').classList.add('shown');
-//     document.getElementsByClassName('recipe').classList.remove('shown');
-
-//     document.getElementsByClassName('cooking-mode').classList.add('shown');
-//     document.getElementsByClassName('cooking-mode').classList.remove('shown');
-
-//     document.getElementsByClassName('profile-page').classList.add('shown');
-//     document.getElementsByClassName('profile-page').classList.remove('shown');
-
-//     document.getElementsByClassName('favorites').classList.add('shown');
-//     document.getElementsByClassName('favorites').classList.remove('shown');
-
-//     document.getElementsByClassName('add-recipe').classList.add('shown');
-//     document.getElementsByClassName('add-recipe').classList.remove('shown');
-// });
+// import { Router } from './Router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const homePage = document.querySelector
-})
+  const homePage = document.querySelector("#homeID");
+  const searchPage = document.querySelector("#search-resultID");
+  const calenderPage = document.querySelector("#calendarID");
+  const groceryPage = document.querySelector("#grocery-listID");
+  const recipePage = document.querySelector("#recipeID");
+  const cookingPage = document.querySelector("#cooking-modeID");
+  const profilePage = document.querySelector("#profile-pageID");
+  const favPage = document.querySelector("#favoritesID");
+  const addRecipePage = document.querySelector("#add-recipeID");
 
-const 
-
-window.addEventListener('DOMContentLoaded', init);
-
-async function init() {
-    initializeServiceWorker();
   
-    try {
-      await fetchRecipes();
-    } catch (err) {
-      console.log(`Error fetching recipes: ${err}`);
-      return;
-    }
+    document.querySelector("#search-bar").addEventListener("click", e => {
+      
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.remove('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
 
-}
+
+    document.querySelector("#LinkToHome").addEventListener("click", e => {
+        e.preventDefault();
+        homePage.classList.remove('hidden');
+        searchPage.classList.add('hidden');
+        calenderPage.classList.add('hidden');
+        groceryPage.classList.add('hidden');
+        recipePage.classList.add('hidden');
+        cookingPage.classList.add('hidden');
+        profilePage.classList.add('hidden');
+        favPage.classList.add('hidden');
+        addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToCalender").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.remove('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToList").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.remove('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToProfile").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.remove('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToFav").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.remove('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToViewed").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.remove('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#expRecipe").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.remove('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToCM").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.remove('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+    });
+
+    document.querySelector("#LinkToAdd").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.remove('hidden');
+    });
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const homePage = document.querySelector
+// });
+
+// window.addEventListener('DOMContentLoaded', init);
+
+// async function init() {
+//     //initializeServiceWorker();
+//     bindSearchBar();
+//     try {
+//       await fetchRecipes();
+//     } catch (err) {
+//       console.log(`Error fetching recipes: ${err}`);
+//       return;
+//     }
+    
+// }
+
+// function bindSearchBar() {
+//   const searchBar = document.getElementsByClassName('search-bar')[0];
+//   const button = searchBar.querySelector('button')
+//   console.log(document.getElementByClassName('search-result'))
+//   button.addEventListener('click', () => {
+//     if (document.getElementByClassName('search-result').classList.contains('shown')) {
+//       document.getElementByClassName('search-result').classList.remove('shown');
+//       document.getElementById('calendar').classList.add('shown');
+//     } else {
+//       document.getElementByClassName('search-result').classList.add('shown');
+//       document.getElementById('calendar').classList.remove('shown');
+//     }
+
+//   })
+  
+// }
+
 
 async function fetchRecipes() {
   return new Promise((resolve, reject) => {
