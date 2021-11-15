@@ -100,6 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
       profilePage.classList.remove('hidden');
       favPage.classList.add('hidden');
       addRecipePage.classList.add('hidden');
+
+      userRecipe.classList.remove('hidden');
+      userViewed.classList.add('hidden');
     });
 
     //User Recipe
