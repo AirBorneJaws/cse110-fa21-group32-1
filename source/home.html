@@ -98,18 +98,19 @@
         <h2>Recipes</h2>
 
         <div class="recipe-navbar">
-            <a href="#recipe-summaryID">Summary</a>
-            <a href="#recipe-ingredientsID">Ingredients</a>
-            <a href="#recipe-directionID">Directions</a>
+            <a href="#recipe-summaryID" id="ToSum">Summary</a>
+            <a href="#recipe-ingredientsID" id="ToIng">Ingredients</a>
+            <a href="#recipe-directionID" id="ToDir">Directions</a>
         </div>
         <!--Recipe Summary-->
-        <div id=recipe-summaryID class="recipe-summary">
+        <div id="recipe-summaryID" class="recipe-summary hidden">
             <p>Summary</p>
+            <p>Content...</p>
             <button type="button">Add to My Favorites</button>
         </div>
 
         <!--Recipe Ingredients-->
-        <div id="recipe-ingredientsID" class="recipe-ingredients">
+        <div id="recipe-ingredientsID" class="recipe-ingredients hidden">
             <p>Ingredients</p>
             <!--Add To List Button-->
             <details>
@@ -127,7 +128,7 @@
         </div>
 
         <!--Recipe Directions-->
-        <div id="recipe-directionID" class="recipe-direction">
+        <div id="recipe-directionID" class="recipe-direction hidden">
             <p>Direction</p>
             <ul>
                 <li><a href="step1">1</a></li>
@@ -174,19 +175,29 @@
         <!--Profile Page Navbar-->
         <div class=profile-page-navbar>
             <ul>
-                <li><a href="#profile-page-recipeID">Recipes</a></li>
-                <li><a href="#profile-page-reviewsID">Reviews</a></li>
+                <li><a href="#profile-page-recipeID" id="UserRec">Recipes</a></li>
+                <li><a href="#profile-page-reviewsID" id="UserRev">Reviews</a></li>
             </ul>
         </div>
 
         <!--Profile Page Recipe-->
-        <div id="profile-page-recipeID" class="profile-page-recipe">
+        <div id="profile-page-recipeID" class="profile-page-recipe hidden">
             <p>Recipes</p>
+            <ul>
+                <li> <button type="menu">Recipe 1 (not linked)</button></li>
+                <li> <button type="menu">Recipe 2 (not linked)</button></li>
+                <li> <button type="menu">Recipe 3 (not linked)</button></li>
+            </ul>
         </div>
 
         <!--Profile Page Reviews-->
-        <div id="profile-page-reviewsID" class="profile-page-reviews">
+        <div id="profile-page-reviewsID" class="profile-page-reviews hidden">
             <p>Reviews</p>
+            <ul>
+                <li> <button type="menu">Recipe 1 (not linked)</button></li>
+                <li> <button type="menu">Recipe 2 (not linked)</button></li>
+                <li> <button type="menu">Recipe 3 (not linked)</button></li>
+            </ul>
         </div>
 
     </section>
@@ -206,13 +217,13 @@
         <h2>Add Recipe</h2>
         <div class="add-recipe-navbar">
             <!-- li><a onclick="navTo('homeID')" href="javascript:void(0)">home</a></li> -->
-            <a onclick= href="#add-recipe-summaryID">Summary</a>
-            <a href="#add-recipe-ingredientsID">Ingredients</a>
-            <a href="#add-recipe-directionID">Directions</a>
+            <a href="#add-recipe-summaryID" id="ToAddSum">Summary</a>
+            <a href="#add-recipe-ingredientsID" id="ToAddIng">Ingredients</a>
+            <a href="#add-recipe-directionID" id="ToAddDir">Directions</a>
         </div>
 
         <!--Add Recipe Summary-->
-        <div id="add-recipe-summaryID" class="add-recipe-summary">
+        <div id="add-recipe-summaryID" class="add-recipe-summary hidden">
             <p>Summary</p>
             <textarea></textarea>
             <br>
@@ -220,7 +231,7 @@
         </div>
 
         <!--Add Recipe Ingredients-->
-        <div id="add-recipe-ingredientsID" class="add-recipe-ingredients">
+        <div id="add-recipe-ingredientsID" class="add-recipe-ingredients hidden">
             <label for="Ingredients"> <p>Ingredients:</p> </label>
             <br>
             <input type="text"><br>
@@ -233,7 +244,7 @@
         </div>
 
         <!--Add Recipe Directions-->
-        <div id="add-recipe-directionID" class="add-recipe-direction">
+        <div id="add-recipe-directionID" class="add-recipe-direction hidden">
             <p>Direction</p>
             <ol>
                 <li>Step 1:</li>

@@ -1,19 +1,39 @@
 // import { Router } from './Router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+  //Footer
   const homePage = document.querySelector("#homeID");
-  const searchPage = document.querySelector("#search-resultID");
   const calenderPage = document.querySelector("#calendarID");
   const groceryPage = document.querySelector("#grocery-listID");
-  const recipePage = document.querySelector("#recipeID");
-  const cookingPage = document.querySelector("#cooking-modeID");
   const profilePage = document.querySelector("#profile-pageID");
+
+  //Sidepanel
   const favPage = document.querySelector("#favoritesID");
   const addRecipePage = document.querySelector("#add-recipeID");
+  //No Write Review page yet
 
-  
+  //Search
+  const searchPage = document.querySelector("#search-resultID");
+
+  //Recipe Page
+  const recipePage = document.querySelector("#recipeID");
+  const cookingPage = document.querySelector("#cooking-modeID");
+  //Recipe Nav
+  const recipeSumPage = document.querySelector("#recipe-summaryID");
+  const recipeIngPage = document.querySelector("#recipe-ingredientsID");
+  const recipeDirPage = document.querySelector("#recipe-directionID");
+
+  //Add Recipe Nav
+  const addrecipeSumPage = document.querySelector("#add-recipe-summaryID");
+  const addrecipeIngPage = document.querySelector("#add-recipe-ingredientsID");
+  const addrecipeDirPage = document.querySelector("#add-recipe-directionID");
+
+  //Profile Page Nav
+  const userViewed = document.querySelector("#profile-page-reviewsID");
+  const userRecipe = document.querySelector("#profile-page-recipeID");
+
+    //Search Bar
     document.querySelector("#search-bar").addEventListener("click", e => {
-      
       e.preventDefault();
       homePage.classList.add('hidden');
       searchPage.classList.remove('hidden');
@@ -26,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
-
+    //Home
     document.querySelector("#LinkToHome").addEventListener("click", e => {
         e.preventDefault();
         homePage.classList.remove('hidden');
@@ -40,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         addRecipePage.classList.add('hidden');
     });
 
+    //Calender
     document.querySelector("#LinkToCalender").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -53,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //Grocery list
     document.querySelector("#LinkToList").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -66,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //User Profile
     document.querySelector("#LinkToProfile").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -79,6 +102,41 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //User Recipe
+    document.querySelector("#UserRec").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.remove('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      userRecipe.classList.remove('hidden');
+      userViewed.classList.add('hidden');
+    });
+
+    //User Reviews
+    document.querySelector("#UserRev").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.remove('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      userRecipe.classList.add('hidden');
+      userViewed.classList.remove('hidden');
+    });
+
+    //Favorite
     document.querySelector("#LinkToFav").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -92,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //Previously Cooked
     document.querySelector("#LinkToViewed").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -103,8 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
       profilePage.classList.remove('hidden');
       favPage.classList.add('hidden');
       addRecipePage.classList.add('hidden');
+
+      userRecipe.classList.add('hidden');
+      userViewed.classList.remove('hidden');
     });
 
+    //Recipe Page (default Summary)
     document.querySelector("#expRecipe").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -116,8 +179,67 @@ document.addEventListener("DOMContentLoaded", () => {
       profilePage.classList.add('hidden');
       favPage.classList.add('hidden');
       addRecipePage.classList.add('hidden');
+
+      recipeSumPage.classList.remove('hidden');
+      recipeIngPage.classList.add('hidden');
+      recipeDirPage.classList.add('hidden');
     });
 
+    //Recipe Summary
+    document.querySelector("#ToSum").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.remove('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      recipeSumPage.classList.remove('hidden');
+      recipeIngPage.classList.add('hidden');
+      recipeDirPage.classList.add('hidden');
+    });
+
+    //Recipe Ingredients
+    document.querySelector("#ToIng").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.remove('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      recipeSumPage.classList.add('hidden');
+      recipeIngPage.classList.remove('hidden');
+      recipeDirPage.classList.add('hidden');
+    });
+
+    //Recipe Direction
+    document.querySelector("#ToDir").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.remove('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');
+
+      recipeSumPage.classList.add('hidden');
+      recipeIngPage.classList.add('hidden');
+      recipeDirPage.classList.remove('hidden');
+    });
+
+    //Cooking Mode
     document.querySelector("#LinkToCM").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -131,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addRecipePage.classList.add('hidden');
     });
 
+    //Add Recipe (default Summary)
     document.querySelector("#LinkToAdd").addEventListener("click", e => {
       e.preventDefault();
       homePage.classList.add('hidden');
@@ -142,6 +265,64 @@ document.addEventListener("DOMContentLoaded", () => {
       profilePage.classList.add('hidden');
       favPage.classList.add('hidden');
       addRecipePage.classList.remove('hidden');
+
+      addrecipeSumPage.classList.remove('hidden');
+      addrecipeIngPage.classList.add('hidden');
+      addrecipeDirPage.classList.add('hidden');
+    });
+
+    //Add Recipe Summary
+    document.querySelector("#ToAddSum").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.remove('hidden');
+
+      addrecipeSumPage.classList.remove('hidden');
+      addrecipeIngPage.classList.add('hidden');
+      addrecipeDirPage.classList.add('hidden');
+    });
+
+    //Add Recipe Ingredients
+    document.querySelector("#ToAddIng").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.remove('hidden');
+
+      addrecipeSumPage.classList.add('hidden');
+      addrecipeIngPage.classList.remove('hidden');
+      addrecipeDirPage.classList.add('hidden');
+    });
+
+    //Add Recipe Direction
+    document.querySelector("#ToAddDir").addEventListener("click", e => {
+      e.preventDefault();
+      homePage.classList.add('hidden');
+      searchPage.classList.add('hidden');
+      calenderPage.classList.add('hidden');
+      groceryPage.classList.add('hidden');
+      recipePage.classList.add('hidden');
+      cookingPage.classList.add('hidden');
+      profilePage.classList.add('hidden');
+      favPage.classList.add('hidden');
+      addRecipePage.classList.remove('hidden');
+
+      addrecipeSumPage.classList.add('hidden');
+      addrecipeIngPage.classList.add('hidden');
+      addrecipeDirPage.classList.remove('hidden');
     });
 });
 
