@@ -57,6 +57,8 @@ function navigate(currPage, nextPage, statePopped) {
         document.getElementsByClassName('search-bar').classList.add('shown');
     }
 
+
+
     // for (let i = 0; i < pageIds.length; i++) {
     //   if (pageIds[i] === pageClass) {
     //     document.getElementsByClassName(pageClass).classList.add('shown');
@@ -73,4 +75,24 @@ function navigate(currPage, nextPage, statePopped) {
     //     document.getElementsByClassName(pageClass).classList.remove('shown');
     //   }
     // }
+}
+
+function navigate2(page, p_state){
+    if(!this[page]){
+        console.error('no such function')
+        return;
+    }
+
+    let hash;
+    if(page == 'home'){
+        hash = '';
+    }
+    else{
+        hash = '#' + page;
+    }
+
+    if(!p_state && window.location.hash != hash){
+        history.pushState({'page' : page}, '', '/' + hash);
+    }
+    this[page]();
 }

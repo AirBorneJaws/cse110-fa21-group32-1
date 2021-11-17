@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //Search Bar
     document.querySelector("#search-bar").addEventListener("click", e => {
       e.preventDefault();
-      homePage.classList.add('hidden');
+      navigate2()
+      /*homePage.classList.add('hidden');
       searchPage.classList.remove('hidden');
       calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
@@ -48,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cookingPage.classList.add('hidden');
       profilePage.classList.add('hidden');
       favPage.classList.add('hidden');
-      addRecipePage.classList.add('hidden');
+      addRecipePage.classList.add('hidden');*/
+
     });
 
     //Home
