@@ -1,4 +1,21 @@
-// import { Router } from './Router.js';
+import { Router } from './Router.js';
+
+const router = new Router(function () {
+  /** 
+   * TODO - Part 1 - Step 1
+   * Select the 'section.section--recipe-cards' element and add the "shown" class
+   * Select the 'section.section--recipe-expand' element and remove the "shown" class
+   * 
+   * You should be using DOM selectors such as document.querySelector() and
+   * class modifications with the classList API (e.g. element.classList.add(),
+   * element.classList.remove())
+   * 
+   * This will only be two single lines
+   * If you did this right, you should see just 1 recipe card rendered to the screen
+   */
+  //document.querySelector('section.section--recipe-cards').classList.add('shown');
+  //document.querySelector('section.section--recipe-expand').classList.remove('shown');
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   //Footer
@@ -40,8 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //Search Bar
     document.querySelector("#search-bar").addEventListener("click", e => {
       e.preventDefault();
-      navigate2()
-      /*homePage.classList.add('hidden');
+      homePage.classList.add('hidden');
       searchPage.classList.remove('hidden');
       calendarPage.classList.add('hidden');
       groceryPage.classList.add('hidden');
@@ -49,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cookingPage.classList.add('hidden');
       profilePage.classList.add('hidden');
       favPage.classList.add('hidden');
-      addRecipePage.classList.add('hidden');*/
+      addRecipePage.classList.add('hidden');
 
     });
 
@@ -79,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       profilePage.classList.add('hidden');
       favPage.classList.add('hidden');
       addRecipePage.classList.add('hidden');
+      router.navigateto('Calendar', false);
     });
 
     //Calendar Month View

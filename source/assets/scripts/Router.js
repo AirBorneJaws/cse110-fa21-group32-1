@@ -1,13 +1,13 @@
 // router.js
-    // export class Router {
-    //     static routes = {};
-    //     constructor(homeFunc) {
-    //         this['home'] = homeFunc;
-    //     }
+export class Router {
+     static routes = {};
+     constructor(homeFunc) {
+         this['home'] = homeFunc;
+    }
 
-    //     addPage(page, pageFunc) {
-    //         this[page] = pageFunc;
-    //     }
+     addPage(page, pageFunc) {
+         this[page] = pageFunc;
+     }
 
     //     navigate(page, statePopped) {
     //         console.log(`navigate() function called, requested page: ${page}`);
@@ -37,25 +37,26 @@
 
     // }
 
-let pageIds = ['home', 'search-result', 'calendar',
-    'grocery-list', 'recipe', 'cooking-mode',
-    'profile-page', 'favorites', 'add-recipe', 'sidepanel'
-];
-// className ^
-// sidepanel should be shown in every page
+    /**let pageIds = ['home', 'search-result', 'calendar',
+        'grocery-list', 'recipe', 'cooking-mode',
+        'profile-page', 'favorites', 'add-recipe', 'sidepanel'
+    ];**/
+    // className ^
+    // sidepanel should be shown in every page
 
-/**
- * @param currPage is the class name for the current associated page (might be able to use statePopped for this info) TODO:
- * @param nextPage is the class name for the next associated page
- * @param statePopped TODO:
- */
-function navigate(currPage, nextPage, statePopped) {
-    document.getElementsByClassName(currPage).classList.remove('shown');
-    document.getElementsByClassName(nextPage).classList.add('shown');
+    /**
+     * @param currPage is the class name for the current associated page (might be able to use statePopped for this info) TODO:
+     * @param nextPage is the class name for the next associated page
+     * @param statePopped TODO:
+     **/
 
-    if (nextPage === 'home' || nextPage === 'search-results') {
-        document.getElementsByClassName('search-bar').classList.add('shown');
-    }
+    /**function navigate(currPage, nextPage, statePopped) {
+        document.getElementsByClassName(currPage).classList.remove('shown');
+        document.getElementsByClassName(nextPage).classList.add('shown');
+
+        if (nextPage === 'home' || nextPage === 'search-results') {
+            document.getElementsByClassName('search-bar').classList.add('shown');
+        }**/
 
 
 
@@ -75,24 +76,26 @@ function navigate(currPage, nextPage, statePopped) {
     //     document.getElementsByClassName(pageClass).classList.remove('shown');
     //   }
     // }
-}
+//}
 
-function navigate2(page, p_state){
-    if(!this[page]){
-        console.error('no such function')
-        return;
-    }
+    navigateto(page, p_state){
+        // if(!this[page]){
+        //     console.error('no such function')
+        //     return;
+        // }
 
-    let hash;
-    if(page == 'home'){
-        hash = '';
-    }
-    else{
-        hash = '#' + page;
-    }
+        let hash;
+        if(page == 'home'){
+            hash = '';
+        }
+        else{
+            hash = '#' + page;
+        }
 
-    if(!p_state && window.location.hash != hash){
-        history.pushState({'page' : page}, '', '/' + hash);
+        if(!p_state && window.location.hash != hash){
+            console.log('asdbvasd');
+            history.pushState({'page': page}, '', window.location.href.split('#')[0] + hash)
+        }
+        //this[page]();
     }
-    this[page]();
 }
