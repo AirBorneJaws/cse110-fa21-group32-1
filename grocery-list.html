@@ -1,0 +1,41 @@
+<script src="recipeCard.js"  type="module"></script>
+<body>
+    <title>Grocery List</title>
+    <ul id = "grocery-list">
+        
+    </ul>
+</body>
+<script>
+    /*
+    function myFunction() {
+        var inputnode = document.createElement("INPUT");
+        var labelnode = document.createElement("Label");
+        var textnode = document.createTextNode("Water");
+        //inputnode.appendChild(inputnode);
+        labelnode.appendChild(textnode);
+        document.getElementById("grocery-list").appendChild(labelnode);
+    }*/
+    var instance = 2
+    function newTextBox(ingredient)
+    {               
+        var element
+            instance++; 
+            // Create new input field
+            var newInput = document.createElement("INPUT");
+            newInput.id = "text" + instance;
+            newInput.name = "text" + instance;
+            newInput.type = "checkbox";
+
+            var label = document.createElement("LABEL");
+
+             //label.htmlFor = "text" + instance;
+            label.for="scales";
+            label.innerHTML=ingredient;
+            instance++; 
+
+            document.body.insertBefore(document.createElement("BR"), element);
+            document.body.insertBefore(label,element);
+            document.body.insertBefore(newInput, label);
+    }
+</script>
+<button onclick="newTextBox()">Add</button>
