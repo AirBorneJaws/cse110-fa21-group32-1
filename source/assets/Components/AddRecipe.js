@@ -372,14 +372,14 @@ class AddRecipePage extends HTMLElement {
           summary: summary.value,
           extendedIngredients: extendedIngredients,
           analyzedInstructions: instructions,
-          author: 'Martin1234', // TODO: Need to update with curr user
+          author: localStorage.getItem('username'), // TODO: Need to update with curr user
         };
 
         // Create the POST message to send to the backend
         let data = {
           type: 'addRecipe',
-          username: 'Martin1234', // TODO: Need to update with curr user
-          password: '1234', // TODO: Need to update with curr password
+          username: localStorage.getItem('username'), // TODO: Need to update with curr user
+          token: localStorage.getItem('token'), // TODO: Need to update with curr password
           recipe: recipe,
           title: title.value,
         };

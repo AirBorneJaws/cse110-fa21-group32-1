@@ -305,8 +305,8 @@ class UpdateRecipePage extends HTMLElement {
         };
         let data = {
           type: 'deleteRecipe',
-          username: 'Martin1234', // TODO: Need to update with curr user
-          password: '1234', // TODO: Need to update with curr password
+          username: localStorage.getItem('username'), // TODO: Need to update with curr user
+          token: localStorage.getItem('token'), // TODO: Need to update with curr password
           recipe: recipe,
         };
 
@@ -407,7 +407,7 @@ class UpdateRecipePage extends HTMLElement {
           summary: summary.value,
           extendedIngredients: extendedIngredients,
           analyzedInstructions: instructions,
-          author: 'Martin1234', // TODO: Need to update with curr user
+          author: localStorage.getItem('user'), // TODO: Need to update with curr user
           id: data['id'],
         };
 
@@ -415,8 +415,8 @@ class UpdateRecipePage extends HTMLElement {
         // Create the POST message to send to the backend
         let data = {
           type: 'updateRecipe',
-          username: 'Martin1234', // TODO: Need to update with curr user
-          password: '1234', // TODO: Need to update with curr password
+          username: localStorage.getItem('username'), // TODO: Need to update with curr user
+          token: localStorage.getItem('token'), // TODO: Need to update with curr password
           recipe: recipe,
           title: recipe['title'],
         };

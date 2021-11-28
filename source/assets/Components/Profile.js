@@ -140,10 +140,12 @@ class ProfilePage extends HTMLElement {
       console.log('Clicked');
     });
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const user = urlParams.get('user');
-    const pass = urlParams.get('pass');
-    getRecipes('Martin1234', '1234', this.shadowRoot);
+    //const urlParams = new URLSearchParams(window.location.search);
+    //const user = urlParams.get('user');
+    //const pass = urlParams.get('pass');
+    const user = localStorage.get('username');
+    const token = localStorage.get('token');
+    getRecipes(user, token, this.shadowRoot);
   }
 
   set recipes(recipes) {}
@@ -154,10 +156,10 @@ class ProfilePage extends HTMLElement {
 customElements.define('profile-page', ProfilePage);
 
 // GET RECIPES
-function getRecipes(username, password, shadowRoot) {
+function getRecipes(username, token, shadowRoot) {
   const searchReq = `type=getCustomizedRecipeIDs&user=${encodeURIComponent(
     username
-  )}&pass=${encodeURIComponent(password)}`;
+  )}&token=${encodeURIComponent(token)}`;
 
   /**
    *

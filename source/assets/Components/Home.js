@@ -55,20 +55,20 @@ class HomePage extends HTMLElement {
     });
 
     // Display current user info TODO: move to other Profile.js
-    const urlParams = new URLSearchParams(window.location.search);
-    const user = urlParams.get('user');
-    const pass = urlParams.get('pass');
+    //const urlParams = new URLSearchParams(window.location.search);
+    const user = localStorage.getItem('username');
+    const token = localStorage.getItem('token');
 
     const userStatus = this.shadowRoot.getElementById('#user-status');
     userStatus.innerHTML = `Currently logged in as ${user}`;
 
     const userEmail = this.shadowRoot.getElementById('#user-email');
-    getEmail(user, pass, userEmail);
+    getEmail(user, token, userEmail);
 
     const deleteBtn = this.shadowRoot.getElementById('#btn-delete');
     deleteBtn.addEventListener('click', () => {
       console.log('DELETE');
-      deleteUser(user, pass);
+      deleteUser(user, token);
     });
 
     // TODO: delete this and show recipes Profile.js (this was a demo hack)
@@ -76,7 +76,7 @@ class HomePage extends HTMLElement {
     ownRecipes.addEventListener('click', () => {
       console.log('SHOW USERS');
       const divElem = this.shadowRoot.getElementById('#recipeDiv');
-      getOwnRecipes(user, pass);
+      getOwnRecipes(user, token);
     });
   }
 }
@@ -88,10 +88,10 @@ customElements.define('home-page', HomePage);
  * @param {String} username
  * @param {String} password
  */
-function getEmail(username, password, userEmail) {
+function getEmail(username, token, userEmail) {
   const emailReq = `type=request&elem=email&user=${encodeURIComponent(
     username
-  )}&pass=${encodeURIComponent(password)}`;
+  )}&token=${encodeURIComponent(token)}`;
 
   /**
    * TODO:
@@ -110,11 +110,11 @@ function getEmail(username, password, userEmail) {
  * @param {String} username
  * @param {String} password
  */
-function deleteUser(username, password) {
+function deleteUser(username, token) {
   let msg = {
-    type: 'delete',
+    type: 'deleteUser',
     username: username,
-    password: password,
+    token: token,
   };
 
   /**
@@ -133,10 +133,10 @@ function deleteUser(username, password) {
  * @param {*} username
  * @param {*} password
  */
-function getOwnRecipes(username, password) {
+function getOwnRecipes(username, token) {
   const getOwnReq = `type=getCustomizedRecipeIDs&user=${encodeURIComponent(
     username
-  )}&pass=${encodeURIComponent(password)}`;
+  )}&token=${encodeURIComponent(token)}`;
 
   /**
    *
