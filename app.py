@@ -18,6 +18,7 @@ recipe_db = recipe.Recipe_DB()
 
 @app.route("/", methods=['GET', 'POST'])
 def home_page():
+    print("Hello")
     print(request)
     if request.method == 'POST':
         msg = request.get_json()
@@ -65,6 +66,7 @@ def home_page():
                 data = {"userInfo": userInfo}
                 data_json = json.dumps(data, indent=2)
                 response = Response(response=data_json, status=200, mimetype='application/json')
+                print(response)
                 return response
             elif msg['type'] == 'request':
                 username = msg['user']
@@ -88,6 +90,7 @@ def home_page():
                 token = msg['token']
                 keys = ['Recipes']
                 result = user_db.request(username, token, keys)
+                print(result)
                 recipes = pickle.loads(result[0])
                 data = {"ID": recipes}
                 data_json = json.dumps(data, indent=2)

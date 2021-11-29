@@ -143,8 +143,8 @@ class ProfilePage extends HTMLElement {
     //const urlParams = new URLSearchParams(window.location.search);
     //const user = urlParams.get('user');
     //const pass = urlParams.get('pass');
-    const user = localStorage.get('username');
-    const token = localStorage.get('token');
+    const user = localStorage.getItem('username');
+    const token = localStorage.getItem('token');
     getRecipes(user, token, this.shadowRoot);
   }
 

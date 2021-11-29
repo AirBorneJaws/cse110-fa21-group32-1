@@ -43,8 +43,8 @@ class Recipe_DB:
         self.cur.execute('SELECT MAX(ID) FROM Recipes')
         result = self.cur.fetchone()
         if result[0] != None and result[0] >= self.custom_recipe_count: self.custom_recipe_count = result[0] + 1
-        print(result[0])
-        print(self.custom_recipe_count)
+        #print(result[0])
+        #print(self.custom_recipe_count)
 
     def searchRecipeByKeyword(self,keyword):
         # Search by keyword. Get recipe IDs from spoonacular, update DB, and return results
@@ -157,5 +157,6 @@ if __name__ == '__main__':
     db.fetchRecipeByID("654959")
     #id = db.createRecipe({'author': 'Chad' , 'name': 'Pasta With Chickpeas and Kale', 'image': 'https://spoonacular.com/recipeImages/654905-312x231.jpg', 'imageType': 'jpg'})
     db.updateRecipe(1000000, {'author': 'Bagrat'})
+    print("hello!")
     
     

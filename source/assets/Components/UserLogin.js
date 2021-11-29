@@ -5,8 +5,6 @@
 // GLOBALS
 // TODO: edit the local server URL to hosted server
 const SERVER_URL = 'http://127.0.0.1:5000';
-const { hashMaker } = require('crypto');
-
 /**
  * TODO:
  * @param {*} formElement
@@ -185,13 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function login(username, password, loginForm) {
 
-  let hashed = hashMaker('sha256').update(password).digest('hex');
+  //let hashed = hashMaker('sha256').update(password).digest('hex');
 
   fetch(
     // need to encode with UTF-8 for special characters like ' '
     `${SERVER_URL}?type=login&user=${encodeURIComponent(
       username
-    )}&pass=${encodeURIComponent(hashed)}`,
+    )}&pass=${encodeURIComponent(password)}`,
     {
       method: 'GET',
       headers: {
@@ -206,7 +204,7 @@ function login(username, password, loginForm) {
     .then((data) => {
       // TODO: passes user information to home.html but need to update with more secure way
       localStorage.setItem('username', username);
-      localStorage.setItem('token', data.userInfo[0]);
+      localStorage.setItem('token', data.userInfo);
       window.location.href = `home.html`;
       //window.location.href = `home.html?user=${data.userInfo[0]}&pass=${data.userInfo[1]}`;
       console.log('Success:', data);
